@@ -9,7 +9,7 @@ import { getActiveCatagory } from '../store/catagories';
 import { useEffect, useState } from 'react';
 
 function NavBar(props) {
-  const { getActiveCatagory, catagories } = props;
+  const { getActiveCatagory, catagories, cart } = props;
   const [value, setValue] = useState(0);
   useEffect(() => {
     getActiveCatagory(value + 1);
@@ -26,10 +26,19 @@ function NavBar(props) {
         }}
         className='w-full h-12 flex bg-transparent'
       >
-        <BottomNavigationAction label='food' icon={<FastfoodIcon />} />
+         <BottomNavigationAction label='food' icon={<FastfoodIcon />} />
         <BottomNavigationAction label='cloths' icon={<CheckroomIcon />} />
         <BottomNavigationAction label='electronics' icon={<DevicesIcon />} />
-        <BottomNavigationAction label='cart' icon={<ShoppingCartIcon />} />
+      </BottomNavigation>
+      <BottomNavigation
+        showLabels
+        value={99}
+        className='w-full h-12 flex bg-transparent'
+      >
+        <BottomNavigationAction
+          label={`cart(${cart.numberOfItems})`}
+          icon={<ShoppingCartIcon />}
+        />
       </BottomNavigation>
     </div>
   );
@@ -37,6 +46,7 @@ function NavBar(props) {
 
 const mapStateToProps = (state) => ({
   catagories: state.catagories,
+  cart: state.cart,
 });
 
 const mapDispatchToProps = {
