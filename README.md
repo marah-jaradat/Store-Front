@@ -14,6 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Links:
 
-[pull request](https://github.com/marah-jaradat/Store-Front/pull/6)
+[pull request](https://github.com/marah-jaradat/Store-Front/pull/5)
 
-[deployment link](https://store-front-qhko9fiqg-marah-jaradat.vercel.app/)
+[deployment link](https://store-front-q4ku073av-marah-jaradat.vercel.app/)
